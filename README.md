@@ -6,16 +6,17 @@
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - cross-platform terminal emulator
 - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - shell
 - [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) - text editor
+- [tmux](https://github.com/tmux/tmux/wiki) - multiplexer
+
 
 ## zsh setup
-- theme: [pure](https://github.com/sindresorhus/pure/blob/main/readme.md)
-- framework: [oh-my-zsh](https://ohmyz.sh/#install)
+- [pure](https://github.com/sindresorhus/pure/blob/main/readme.md) - minial theme
+- [oh-my-zsh](https://ohmyz.sh/#install) - startup config framework
 
 ## tmux setup
-- [tmux](https://github.com/tmux/tmux/wiki)
-- tmux-package-manager: [tpm](https://github.com/tmux-plugins/tpm/blob/master/README.md)
-- theme: [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md)
+- [tpm](https://github.com/tmux-plugins/tpm/blob/master/README.md) - tmux package-manager
+- [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md) - theme
 
 ## neovim setup
-- distro: [NvChad](https://nvchad.com/docs/quickstart/install)
+- [NvChad](https://nvchad.com/docs/quickstart/install) - framework config
 
