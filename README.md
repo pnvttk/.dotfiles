@@ -1,8 +1,8 @@
 # .dotfiles
 [Example tutorial](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds/blob/master/README.md)
 
-# Version Control
-[git](https://git-scm.com/)
+# Pre-require
+- [git](https://git-scm.com/)
 
 # Terminal
 [alacritty](https://github.com/alacritty/alacritty/blob/master/README.md)
