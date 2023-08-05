@@ -64,6 +64,7 @@ brew bundle dump --describe
 
 ## tmux setup
 - [tpm](https://github.com/tmux-plugins/tpm/blob/master/README.md) - tmux package-manager
+- [tmux-vim](https://github.com/christoomey/vim-tmux-navigator) - tmux vim keymap navigation
 - [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md) - theme
 
 ## neovim setup
