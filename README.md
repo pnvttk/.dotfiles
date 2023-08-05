@@ -3,7 +3,7 @@
 
 ## Pre-require
 - [git](https://git-scm.com/) - version control
-- [alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - cross-platform terminal emulator
+- [kitty](https://github.com/kovidgoyal/kitty) - cross-platform terminal emulator
 - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - shell
 - [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) - text editor
 - [tmux](https://github.com/tmux/tmux/wiki) - multiplexer
