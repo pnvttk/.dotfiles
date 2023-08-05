@@ -11,7 +11,7 @@
 
 
 ## zsh setup
-- [pure](https://github.com/sindresorhus/pure/blob/main/readme.md) - minial theme
+- [pure](https://github.com/sindresorhus/pure/blob/main/readme.md) - minial theme (manual install)
 - [oh-my-zsh](https://ohmyz.sh/#install) - startup config framework
 
 ## tmux setup
