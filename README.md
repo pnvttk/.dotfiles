@@ -68,5 +68,7 @@ brew bundle dump --describe
 - [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md) - theme
 
 ## neovim setup
+- [vim-plug](https://github.com/junegunn/vim-plug) - vim plugin management
 - [NvChad](https://nvchad.com/docs/quickstart/install) - framework config
+- [comment-gc](https://github.com/tpope/vim-commentary) - comment plugin
 
