@@ -2,9 +2,7 @@
 [Example tutorial](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds/blob/master/README.md)
 
 or sumary
-
-
-## Steps to bootstrap a new Mac
+### Steps to bootstrap a new Mac
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew.
 
@@ -12,17 +10,15 @@ or sumary
 xcode-select --install
 ```
 
-
 2. Clone repo into new hidden directory.
 
 ```zsh
 # Use SSH (if set up)...
-git clone git@github.com:eieioxyz/Beyond-Dotfiles-in-100-Seconds.git ~/.dotfiles
+git clone git@github.com:pnvttk/.dotfiles.git ~/.dotfiles
 
 # ...or use HTTPS and switch remotes later.
-git clone https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds.git ~/.dotfiles
+git clone https://github.com/pnvttk/.dotfiles.git ~/.dotfiles
 ```
-
 
 3. Create symlinks in the Home directory to the real files in the repo.
 
@@ -31,9 +27,7 @@ git clone https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds.git ~/.dotf
 # investigate install scripts and bootstrapping tools.
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ```
-
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
 
@@ -51,6 +45,11 @@ cd ~/.dotfiles && brew bundle
 ```
 
 ## Pre-require
+to set brewfile for tracking use this code
+```
+brew bundle dump --describe
+```
+
 - [git](https://git-scm.com/) - version control
 - [iterm2](https://iterm2.com/) - macos terminal emulator
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform terminal emulator
