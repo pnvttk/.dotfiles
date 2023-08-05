@@ -27,6 +27,8 @@ git clone https://github.com/pnvttk/.dotfiles.git ~/.dotfiles
 # investigate install scripts and bootstrapping tools.
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.config
+ln -s ~/.dotfiles/.init.vim ~/.config/nvim/init.vim
 ```
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
