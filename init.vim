@@ -2,7 +2,11 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
+
+" theme
+colorscheme catppuccin-mocha
 
 let g:tmux_navigator_no_mappings = 1
 
@@ -14,6 +18,5 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 
 " Enable navigation back to Tmux from Neovim using <C-\><C-n>
 nnoremap <silent> <C-\><C-n> :TmuxNavigatePrevious<CR>
-
 
 set number
