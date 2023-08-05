@@ -3,6 +3,7 @@
 
 ## Pre-require
 - [git](https://git-scm.com/) - version control
+- [iterm2]() - macos terminal emulator
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform terminal emulator
 - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - shell
 - [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) - text editor
