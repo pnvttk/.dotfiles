@@ -66,11 +66,13 @@ brew bundle dump --describe
 
 ## tmux setup
 - [tpm](https://github.com/tmux-plugins/tpm/blob/master/README.md) - tmux package-manager
-- [tmux-vim](https://github.com/christoomey/vim-tmux-navigator) - tmux vim keymap navigation
 - [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md) - theme
+- [tmux-vim](https://github.com/christoomey/vim-tmux-navigator) - tmux vim keymap navigation
+- [tmux-yank](https://github.com/tmux-plugins/tmux-yank) - tmux yank to clipboard
 
 ## neovim setup
 - [vim-plug](https://github.com/junegunn/vim-plug) - vim plugin management
+- [catppuccin](https://github.com/catppuccin/nvim) - neovim theme
 - [NvChad](https://nvchad.com/docs/quickstart/install) - framework config
 - [comment-gc](https://github.com/tpope/vim-commentary) - comment plugin
 
