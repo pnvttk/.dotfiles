@@ -1,4 +1,2 @@
-cd ios && pod install && cd ../
-
 watchman watch-del '/Users/twoeight/Desktop/FocusOneCRM' ; watchman watch-project '/Users/twoeight/Desktop/FocusOneCRM'
 
