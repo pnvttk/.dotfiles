@@ -29,6 +29,7 @@ git clone https://github.com/pnvttk/.dotfiles.git ~/.dotfiles
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.config
 ln -s ~/.dotfiles/.init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 ```
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
