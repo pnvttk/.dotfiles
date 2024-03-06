@@ -1,7 +1,9 @@
 ## .dotfiles
+
 [Example tutorial](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds/blob/master/README.md)
 
 or sumary
+
 ### Steps to bootstrap a new Mac
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew.
@@ -49,32 +51,35 @@ cd ~/.dotfiles && brew bundle
 ```
 
 ## Pre-require
+
 to set brewfile for tracking use this code
+
 ```
 brew bundle dump --describe
 ```
 
 - [git](https://git-scm.com/) - version control
-- [iterm2](https://iterm2.com/) - macos terminal emulator
+<!-- - [iterm2](https://iterm2.com/) - macos terminal emulator -->
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform terminal emulator
 - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - shell
 - [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) - text editor
 - [tmux](https://github.com/tmux/tmux/wiki) - multiplexer
 
-
 ## zsh setup
+
 - [pure](https://github.com/sindresorhus/pure/blob/main/readme.md) - minial theme (manual install)
 - [oh-my-zsh](https://ohmyz.sh/#install) - startup config framework
 
 ## tmux setup
+
 - [tpm](https://github.com/tmux-plugins/tpm/blob/master/README.md) - tmux package-manager
 - [catppuccin](https://github.com/catppuccin/tmux/blob/main/README.md) - theme
 - [tmux-vim](https://github.com/christoomey/vim-tmux-navigator) - tmux vim keymap navigation
 - [tmux-yank](https://github.com/tmux-plugins/tmux-yank) - tmux yank to clipboard
 
 ## neovim setup
+
 - [vim-plug](https://github.com/junegunn/vim-plug) - vim plugin management
 - [catppuccin](https://github.com/catppuccin/nvim) - neovim theme
-- [NvChad](https://nvchad.com/docs/quickstart/install) - framework config
+<!-- - [NvChad](https://nvchad.com/docs/quickstart/install) - framework config -->
 - [comment-gc](https://github.com/tpope/vim-commentary) - comment plugin
-
