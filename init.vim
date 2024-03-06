@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible' " basic plugin set-up
 Plug 'tpope/vim-commentary' " gcc comment command
 Plug 'folke/tokyonight.nvim' " Theme
+Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'christoomey/vim-tmux-navigator' " Add vim keymap for navigator in tmux
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Develop plugin for GO -> https://github.com/fatih/vim-go
@@ -71,4 +72,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+require("autoclose").setup()
 EOF
