@@ -30,6 +30,7 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.config
 ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+ln -s ~/.dotfiles/kitty-theme.conf ~/.config/kitty/current-theme.conf
 ```
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
