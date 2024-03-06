@@ -26,3 +26,6 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <C-\><C-n> :TmuxNavigatePrevious<CR>
 
 set number
+
+" set clipboard
+set clipboard^=unnamed,unnamedplus
