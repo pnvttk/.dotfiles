@@ -82,8 +82,13 @@ zstyle :prompt:pure:path color blue
 # change the color for both `prompt:success` and `prompt:error`
 # zstyle ':prompt:pure:prompt:*' color green
 
-# turn on git stash status
+# turn on git
 zstyle :prompt:pure:git:stash show yes
+zstyle :prompt:pure:git:branch show yes
+zstyle :prompt:pure:git:dirty show yes
+zstyle :prompt:pure:git:action show yes
+zstyle :prompt:pure:git:arrow show yes
+zstyle :prompt:pure:virtualenv show yes
 
 prompt pure
 
