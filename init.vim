@@ -1,7 +1,7 @@
 call plug#begin()
 Plug 'tpope/vim-sensible' " basic plugin set-up
 Plug 'tpope/vim-commentary' " gcc comment command
-Plug 'folke/tokyonight.nvim' " Theme
+Plug 'projekt0n/github-nvim-theme'
 Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'christoomey/vim-tmux-navigator' " Add vim keymap for navigator in tmux
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
@@ -9,10 +9,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Develop plugin for GO -> ht
 call plug#end()
 
 " Theme
-colorscheme tokyonight-night
-" colorscheme tokyonight-storm
-" colorscheme tokyonight-day
-" colorscheme tokyonight-moon
+set termguicolors
+colorscheme github_dark_default
 
 " Enable vim tmux navigator
 let g:tmux_navigator_no_mappings = 1
