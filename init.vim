@@ -6,6 +6,7 @@ Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'christoomey/vim-tmux-navigator' " Add vim keymap for navigator in tmux
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Develop plugin for GO -> https://github.com/fatih/vim-go
+Plug 'hiphish/rainbow-delimiters.nvim' " rainbow parentheses 
 call plug#end()
 
 " Theme
