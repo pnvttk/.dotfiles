@@ -59,7 +59,6 @@ brew bundle dump --describe
 ```
 
 - [git](https://git-scm.com/) - version control
-<!-- - [iterm2](https://iterm2.com/) - macos terminal emulator -->
 - [kitty](https://github.com/kovidgoyal/kitty) - cross-platform terminal emulator
 - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) - shell
 - [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim) - text editor
@@ -80,6 +79,5 @@ brew bundle dump --describe
 ## neovim setup
 
 - [vim-plug](https://github.com/junegunn/vim-plug) - vim plugin management
-- [catppuccin](https://github.com/catppuccin/nvim) - neovim theme
-<!-- - [NvChad](https://nvchad.com/docs/quickstart/install) - framework config -->
+- [github-dark-default](https://github.com/projekt0n/github-nvim-theme) - neovim theme
 - [comment-gc](https://github.com/tpope/vim-commentary) - comment plugin
