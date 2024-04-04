@@ -1,2 +1,0 @@
-watchman watch-del '/Users/twoeight/Desktop/FocusOneCRM' ; watchman watch-project '/Users/twoeight/Desktop/FocusOneCRM'
-
