@@ -13,6 +13,10 @@ call plug#end()
 set termguicolors
 colorscheme github_dark_default
 
+" highlight when text length is over 80 width
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " Enable vim tmux navigator
 let g:tmux_navigator_no_mappings = 1
 
@@ -26,6 +30,9 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <C-\><C-n> :TmuxNavigatePrevious<CR>
 
 set number " Set lines number
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set clipboard^=unnamed,unnamedplus " Set clipboard
 
 " script for treesetter LSP
