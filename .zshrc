@@ -121,12 +121,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dev-tmux="sh ~/.dotfiles/tmux-env/index.sh"
 alias sn="nvim ~/short-note.txt"
+alias git-adog="git log --all --decorate --oneline --graph"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export node env for mac m1 to xcode
+export NODE_BINARY=$(which node)
 
 # Architecture checking
 [[ $(arch) = "arm64" ]] &&
