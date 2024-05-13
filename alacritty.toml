@@ -1,6 +1,6 @@
 [shell]
 program = "/bin/bash"
-args = ["-l"]
+args = ["-l", "-c" ,"exec bash"]
 
 [font]
 size=16
