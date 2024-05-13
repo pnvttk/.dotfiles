@@ -1,3 +1,6 @@
 alias vim="nvim"
 alias sn="nvim ~/short-note.txt"
 alias gag="git log --all --decorate --oneline --graph"
+
+alias d-crm-mobile="cd ~/Desktop/FocusOneCRM/"
+alias d-df="cd ~/.dotfiles/"
