@@ -1,0 +1,14 @@
+[shell]
+program = "/bin/bash"
+args = ["-l"]
+
+[font]
+size=16
+
+[window]
+decorations="none"
+startup_mode =  "Maximized"
+
+[selection]
+save_to_clipboard = true
+

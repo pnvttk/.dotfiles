@@ -1,4 +1,0 @@
-tmux-env/*
-!tmux-env/index.sh
-
-scripts/*
