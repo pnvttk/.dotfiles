@@ -6,12 +6,14 @@ Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
 Plug 'christoomey/vim-tmux-navigator' " Add vim keymap for navigator in tmux
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " syntax highlight
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Develop plugin for GO -> https://github.com/fatih/vim-go
-Plug 'hiphish/rainbow-delimiters.nvim' " rainbow parentheses 
+Plug 'hiphish/rainbow-delimiters.nvim' " rainbow parentheses
 call plug#end()
 
 " Theme
 set termguicolors
-colorscheme github_dark_default
+set background=dark
+colorscheme slate
+" colorscheme github_dark_default
 
 " highlight when text length is over 80 width
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -34,6 +36,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set clipboard^=unnamed,unnamedplus " Set clipboard
+set hlsearch
+set ignorecase
+set smartcase
 
 " script for treesetter LSP
 lua << EOF
