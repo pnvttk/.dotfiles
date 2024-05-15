@@ -1,139 +1,61 @@
-call plug#begin()
-Plug 'tpope/vim-commentary' " gcc comment command
-Plug 'm4xshen/autoclose.nvim' " Autoclose brackets
-call plug#end()
+" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
+" We set it explicitely to make our position clear!
+set nocompatible
+
+" set cursor mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 set background=dark
 colorscheme slate
 
-" Make Vim more useful
-set nocompatible
+filetype plugin indent on  " Load plugins according to detected filetype.
+syntax on                  " Enable syntax highlighting.
 
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
+set autoindent             " Indent according to previous line.
+set expandtab              " Use spaces instead of tabs.
+set softtabstop=4         " Tab key indents by 4 spaces.
+set shiftwidth=4         " >> indents by 4 spaces.
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
 
-" Enhance command-line completion
-set wildmenu
+set backspace=indent,eol,start  " Make backspace work as you would expect.
+set hidden                 " Switch between buffers without having to save first.
+set laststatus=2         " Always show statusline.
+set display=lastline  " Show as much as possible of the last line.
 
-" Allow cursor keys in insert mode
-set esckeys
+set clipboard=unnamed      " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 
-" Allow backspace in insert mode
-set backspace=indent,eol,start
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
+set wildmenu               " Enhance command-line completion
+set esckeys                " Allow cursor keys in insert mode
 
-" Optimize for fast terminal connections
-set ttyfast
+set number
+set ignorecase             " Ignore case searchs
+set incsearch              " Highlight while searching with / or ?.
+set hlsearch               " Keep matches highlighted.
 
-" Add the g flag to search/replace by default
-set gdefault
+set ttyfast                " Faster redrawing.
+set lazyredraw             " Only redraw when necessary.
 
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
+set splitbelow             " Open new windows below the current window.
+set splitright             " Open new windows right of the current window.
 
-" Change mapleader
-let mapleader=","
+set cursorline             " Find the current line quickly.
+set wrapscan               " Searches wrap around end-of-file.
+set report=0         " Always report changed lines.
+set synmaxcol=200       " Only highlight the first 200 columns.
 
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
+set nofixeol
+set nofixendofline
 
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-	set undodir=~/.vim/undo
-endif
 
-" Don’t create backups when editing files in certain directories
-set backupskip=/tmp/*,/private/tmp/*
-
-" Respect modeline in files
-set modeline
-set modelines=4
-
-" Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
-
-" Enable line numbers
-set number
-
-" Enable syntax highlighting
-syntax on
-
-" Highlight current line
-set cursorline
-
-" Make tabs as wide as two spaces
-set tabstop=2
-
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
-
-" Highlight searches
-set hlsearch
-
-" Ignore case of searches
-set ignorecase
-
-" Highlight dynamically as pattern is typed
-set incsearch
-
-" Always show status line
-set laststatus=2
-
-" Enable mouse in all modes
-set mouse=a
-
-" Disable error bells
-set noerrorbells
-
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-
-" Show the cursor position
-set ruler
-
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-
-" Show the current mode
-set showmode
-
-" Show the filename in the window titlebar
-set title
-
-" Show the (partial) command as it’s being typed
-set showcmd
-
-" " Use relative line numbers
-" if exists("&relativenumber")
-" 	set relativenumber
-" 	au BufReadPost * set relativenumber
-" endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
-
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
-
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+set list                   " Show non-printable characters.
+if has('multi_byte') && &encoding ==# 'utf-8'
+    let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+else
+    let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
