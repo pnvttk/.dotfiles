@@ -43,19 +43,11 @@ set splitright             " Open new windows right of the current window.
 
 set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
-set report=0         " Always report changed lines.
-set synmaxcol=200       " Only highlight the first 200 columns.
+set report=0		   " Always report changed lines.
+set synmaxcol=200	   " Only highlight the first 200 columns.
 
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
 set nofixeol
 set nofixendofline
-
-
-set list                   " Show non-printable characters.
-if has('multi_byte') && &encoding ==# 'utf-8'
-    let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
-else
-    let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
-endif
