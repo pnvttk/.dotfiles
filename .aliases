@@ -6,3 +6,7 @@ alias gagd="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Cres
 
 alias d-crm-mobile="cd ~/Desktop/FocusOneCRM/"
 alias d-df="cd ~/.dotfiles/"
+
+if [[ $TMUX ]]; then
+  alias clear='clear && tmux clear-history'
+fi
