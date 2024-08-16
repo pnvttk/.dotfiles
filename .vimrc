@@ -1,6 +1,8 @@
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 
 " set cursor mode
 let &t_SI = "\e[6 q"
@@ -9,6 +11,7 @@ let &t_EI = "\e[2 q"
 set background=dark
 colorscheme slate
 
+runtime macros/matchit.vim
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
@@ -51,3 +54,9 @@ set binary
 set noeol
 set nofixeol
 set nofixendofline
+
+"-- FOLDING --  
+"set foldmethod=syntax "syntax highlighting items specify folds  
+"set foldcolumn=1 "defines 1 col at window left, to indicate folding  
+"let javaScript_fold=1 "activate folding by JS syntax  
+"set foldlevelstart=99 "start file with all folds opened
