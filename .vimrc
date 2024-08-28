@@ -30,7 +30,6 @@ set clipboard=unnamed      " Use the OS clipboard by default (on versions compil
 
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
-set wildmenu               " Enhance command-line completion
 set esckeys                " Allow cursor keys in insert mode
 
 set number
@@ -55,8 +54,14 @@ set noeol
 set nofixeol
 set nofixendofline
 
-"-- FOLDING --  
-"set foldmethod=syntax "syntax highlighting items specify folds  
-"set foldcolumn=1 "defines 1 col at window left, to indicate folding  
-"let javaScript_fold=1 "activate folding by JS syntax  
-"set foldlevelstart=99 "start file with all folds opened
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+set pumheight=10
+set wildignorecase
+set wildignore+=*/node_modules/*,*.git/*,*.DS_Store " Ignore certain files and directories during completion
+
+" Set the path for file searching but exclude certain directories
+set path+=**
+set path-=**/node_modules/**
+set path-=**/.git/**
