@@ -15,7 +15,12 @@ Just run `install.sh` after finished install required tools
 - [tmux-vim](https://github.com/christoomey/vim-tmux-navigator) - tmux vim keymap navigation
 - [tmux-yank](https://github.com/tmux-plugins/tmux-yank) - tmux yank to clipboard -->
 
-## Installation
+# Other tools
+- htop
+- nmap
+- nvm
+- yt-dlp
+- ffmpeg
 
 ## vim plugin
 - [vim-plug](https://github.com/junegunn/vim-plug) - vim plugin management
