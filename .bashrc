@@ -9,11 +9,11 @@ unset file;
 set -o vi
 export CLICOLOR=1
 
-if command -v chruby > /dev/null 2>&1; then
-    source /usr/local/opt/chruby/share/chruby/chruby.sh
-    source /usr/local/opt/chruby/share/chruby/auto.sh
-    chruby 3.3.0
-fi
+# if command -v chruby > /dev/null 2>&1; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+#     chruby 3.3.0
+# fi
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
