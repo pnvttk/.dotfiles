@@ -60,3 +60,8 @@ if ask "Do you want to install .vimrc?"; then
     echo "Creating symlink $PWD/.vimrc ~/.vimrc"
     ln -s "$PWD/.vimrc" ~/$(basename ".vimrc")
 fi
+
+# Set bash as default shell
+if ask "Do you want to change Bash as default shell?"; then
+    chsh -s /bin/bash
+fi
