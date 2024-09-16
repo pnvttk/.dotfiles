@@ -14,7 +14,7 @@
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/pnvttk/.dotfiles.git ~/.dotfiles
 ```
 
 2. Run `install.sh`
