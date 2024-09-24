@@ -1,11 +1,11 @@
 # alias vim="nvim"
-alias sn="vim ~/short-note.txt"
 alias ts="~/tools/ts-cli/ts-cli.sh"
 alias gag="git log --all --decorate --oneline --graph"
 alias gagd="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --all --decorate --graph --date=relative --date-order"
 
 alias d-crm-mobile="cd ~/Desktop/FocusOneCRM/"
 alias d-df="cd ~/.dotfiles/"
+alias sn="vim ~/.dotfiles/notes"
 
 if [[ $TMUX ]]; then
   alias clear='clear && tmux clear-history'
