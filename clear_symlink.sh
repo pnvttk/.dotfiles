@@ -1,8 +1,9 @@
-rm ~/.aliases
+rm ~/.bashrc
 rm ~/.bash_profile
 rm ~/.bash_prompt
-rm ~/.exports
+rm ~/.aliases
 rm ~/.inputrc
 rm ~/.path
-rm ~/.tmux.conf
-rm ~/.vimrc
+rm ~/.exports
+rm ~/.functions
+rm ~/.extra
