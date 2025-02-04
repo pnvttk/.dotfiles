@@ -1,9 +1,18 @@
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-# export node env for mac m1 to xcode
-export NODE_BINARY=$(which node)
+# Check if NVM is installed
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    # This loads NVM
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    # This loads NVM bash_completion
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
+
+# Set JAVA_HOME conditionally
+if command -v java > /dev/null; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"  # Adjust as needed
+    fi
+    export PATH="$JAVA_HOME/bin:$PATH"
+fi
