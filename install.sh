@@ -23,14 +23,22 @@ function create_symlink() {
     source_file="$1"
     target_file="$2"
     if [ -e "$target_file" ]; then
-        echo "$target_file already exists. Overwrite? (Y/n)"
-        if ! ask; then
-            echo "Skipping $source_file."
-            return
+        # Check if the existing target is not the same as the source to avoid circular link
+        if [ "$(readlink -f "$target_file")" != "$source_file" ]; then
+            echo "$target_file already exists. Overwrite it? (Y/n)"
+            if ! ask; then
+                echo "Skipping $source_file."
+                return
+            fi
         fi
     fi
+    
+    if [ -d "$target_file" ]; then
+        target_file="$target_file/$(basename "$source_file")"
+    fi
+    
     echo "Creating symlink $source_file -> $target_file"
-    ln -sfn "$source_file" "$target_file" # -f to force overwrite, -n to not dereference existing symlinks
+    ln -sfn "$source_file" "$target_file"  # -f to force overwrite, -n to prevent dereferencing
 }
 
 # Directory for configs
@@ -39,13 +47,15 @@ CONFIG_DIR="$HOME/.config"
 mkdir -p "$CONFIG_DIR/alacritty"
 mkdir -p "$CONFIG_DIR/mpv"
 
-# Bash conf
+# Bash config
 if ask "Do you want to install bash config?"; then
-    for file in .bashrc .bash_prompt .bash_profile .aliases .inputrc .path .exports .functions .extra; do
-        if [ -f "$file" ]; then
+    for file in .{bashrc,bash_prompt,bash_profile,aliases,inputrc,path,exports,functions,extra}; do
+        if [ -r "$file" ] && [ -f "$file" ]; then
+            echo "Creating symlink $PWD/$file ~/$(basename "$file")"
             create_symlink "$PWD/$file" "$HOME/$(basename "$file")"
         fi
     done
+    unset file;
 fi
 
 # Alacritty conf
