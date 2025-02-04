@@ -4,64 +4,74 @@
 function ask() {
     read -p "$1 (Y/n): " resp
     if [ -z "$resp" ]; then
-        response_lc="y" # empty is Yes
-    else
-        # case insensitive
-        response_lc=$(echo "$resp" | tr '[:upper:]' '[:lower:]')
+        resp="y" # empty is Yes
     fi
-
-    [ "$response_lc" = "y" ]
+    # Convert response to lowercase for case-insensitivity
+    case "${resp,,}" in
+        y|yes) return 0 ;; # Yes
+        n|no) return 1 ;;  # No
+        *) echo "Invalid response. Defaulting to 'Yes'." ; return 0 ;; # Default to Yes
+    esac
 }
 
-# Check what shell is being used
-SH="${HOME}/.bashrc"
-# ZSHRC="${HOME}/.zshrc"
-# if [ -f "$ZSHRC" ]; then
-# 	SH="$ZSHRC"
-# fi
-# echo >> $SH
+# Create symlink function
+function create_symlink() {
+    source_file="$1"
+    target_file="$2"
+    if [ -e "$target_file" ]; then
+        echo "$target_file already exists. Overwrite? (Y/n)"
+        if ! ask; then
+            echo "Skipping $source_file."
+            return
+        fi
+    fi
+    echo "Creating symlink $source_file -> $target_file"
+    ln -sfn "$source_file" "$target_file" # -f to force overwrite, -n to not dereference existing symlinks
+}
 
-# # Ask which files should be sourced
-# echo "Do you want $SH to source: "
-# for file in shell/*; do
-#     if [ -f "$file" ]; then
-#         filename=$(basename "$file")
-#         if ask "${filename}?"; then
-#             echo "source $(realpath "$file")" >> "$SH"
-#         fi
-#     fi
-# done
+# Directory for configs
+CONFIG_DIR="$HOME/.config"
+# Create necessary directories if they do not exist
+mkdir -p "$CONFIG_DIR/alacritty"
+mkdir -p "$CONFIG_DIR/mpv"
 
 # Bash conf
 if ask "Do you want to install bash config?"; then
-    for file in .{bashrc,bash_prompt,bash_profile,aliases,inputrc,path,exports,functions,extra}; do
-        if [ -r "$file" ] && [ -f "$file" ]; then
-            echo "Creating symlink $PWD/$file ~/$(basename $file)"
-            ln -s "$PWD/$file" ~/$(basename "$file")
+    for file in .bashrc .bash_prompt .bash_profile .aliases .inputrc .path .exports .functions .extra; do
+        if [ -f "$file" ]; then
+            create_symlink "$PWD/$file" "$HOME/$(basename "$file")"
         fi
     done
-    unset file;
 fi
 
 # Alacritty conf
 if ask "Do you want to install alacritty.toml?"; then
-    echo "Creating symlink $PWD/alacritty.toml ~/.config/alacritty/alacritty.toml"
-    ln -s "$PWD/alacritty.toml" ~/.config/alacritty/$(basename "alacritty.toml")
+    create_symlink "$PWD/alacritty.toml" "$CONFIG_DIR/alacritty/alacritty.toml"
 fi
 
 # Tmux conf
 if ask "Do you want to install .tmux.conf?"; then
-    echo "Creating symlink $PWD/.tmux.conf ~/.tmux.conf"
-    ln -s "$PWD/.tmux.conf" ~/$(basename ".tmux.conf")
+    create_symlink "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 fi
 
 # Vim conf
 if ask "Do you want to install .vimrc?"; then
-    echo "Creating symlink $PWD/.vimrc ~/.vimrc"
-    ln -s "$PWD/.vimrc" ~/$(basename ".vimrc")
+    create_symlink "$PWD/.vimrc" "$HOME/.vimrc"
 fi
 
-# Set bash as default shell
-if ask "Do you want to change Bash as default shell?"; then
-    chsh -s /bin/bash
+# Mpv conf
+if ask "Do you want to install mpv.conf?"; then
+    create_symlink "$PWD/mpv.conf" "$CONFIG_DIR/mpv/mpv.conf"
+fi
+
+# Set bash as the default shell
+if ask "Do you want to change your default shell to Bash?"; then
+    # Check if the shell is already set
+    current_shell=$(basename "$SHELL")
+    if [ "$current_shell" != "bash" ]; then
+        echo "Changing default shell to Bash..."
+        chsh -s /bin/bash
+    else
+        echo "Bash is already set as the default shell."
+    fi
 fi
