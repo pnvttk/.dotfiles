@@ -6,12 +6,16 @@ function ask() {
     if [ -z "$resp" ]; then
         resp="y" # empty is Yes
     fi
-    # Convert response to lowercase for case-insensitivity
-    case "${resp,,}" in
-        y|yes) return 0 ;; # Yes
-        n|no) return 1 ;;  # No
-        *) echo "Invalid response. Defaulting to 'Yes'." ; return 0 ;; # Default to Yes
-    esac
+    # Convert response to lowercase
+    response_lc=$(echo "$resp" | tr '[:upper:]' '[:lower:]')
+    if [[ "$response_lc" == "y" || "$response_lc" == "yes" ]]; then
+        return 0  # Yes
+    elif [[ "$response_lc" == "n" || "$response_lc" == "no" ]]; then
+        return 1  # No
+    else
+        echo "Invalid response. Defaulting to 'Yes'."
+        return 0  # Default to Yes
+    fi
 }
 
 # Create symlink function
