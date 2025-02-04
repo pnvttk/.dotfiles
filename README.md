@@ -15,12 +15,18 @@
 
 ```bash
 git clone https://github.com/pnvttk/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
-2. Run `install.sh`
+2. Run `clear_symlink.sh` (optional)
+```
+bash clear_symlink.sh
+```
+
+3. Run `install.sh`
 
 ```
-bash ~/.dotfiles/install.sh
+bash install.sh
 ```
 ## Configuration Details
 
